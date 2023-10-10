@@ -10,7 +10,9 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({whitelist:true}));
   app.enableCors({
     credentials: true,
-    origin: ['http://localhost:3000'],
+    origin: [
+      'http://localhost:3000',
+      'https://frontend-todo-next.onrender.com'],
   });
   app.use(cookieParser());//これが無かったのが401の原因
   app.use(
